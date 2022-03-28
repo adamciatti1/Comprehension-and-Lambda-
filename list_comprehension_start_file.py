@@ -71,15 +71,19 @@ print(newlist)
 ## count how many times the word 'the' appears in the text file - 'sometext.txt'
 
 myfile = open('sometext.txt', 'r')
-newlist = [x.split() for x in myfile if x == 'the']
-print(newlist)
+reader = myfile.read()
+words = reader.split()
+newlist = [x for x in words if x == 'the']
+print(len(newlist))
 
 ## Extract the numbers from the following phrase ##
 
 phrase = 'In 1984 there were 13 instances of a protest with over 1000 people attending. On average there were 15 reported injuries at each " + "event, with about 3 or 4 that were classifled as serious per event.'
 
+new_phrase = phrase.split()
 
-
+digit_phase = [int(i) for i in new_phrase if i.isdigit()]
+print(digit_phase)
 
 
 
