@@ -7,7 +7,9 @@ Even numbers from the said list:
 Odd numbers from the said list:
 [1, 3, 5, 7, 9]
 '''
+from distutils.log import error
 import os
+from re import X
 clear = lambda: os.system("cls") 
 clear()
 
@@ -85,12 +87,16 @@ print(newer_list)
 check whether a given string contains a capital letter, a lower case letter, a number and a minimum length of 8 characters.
 (This is like a password verification function, HINT: Python function 'any' may be useful)
 '''
+
 password = input('Enter a password:')
-verified_password = lambda x: any(password.isupper()) and any(password.islower()) and any(password.isnumeric()) and len(password) >= 8, password
 
 
+validate = (lambda i: [x for x in i if (x.isupper()) and (x.islower()) and (x.isdigit())])
 
-
+if len(validate(password)) == 0:
+    print('Valid Password')
+else:
+    print('Bad password')
 
 
 ''' 7)
