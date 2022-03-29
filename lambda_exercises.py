@@ -90,14 +90,14 @@ check whether a given string contains a capital letter, a lower case letter, a n
 
 password = input('Enter a password:')
 
+rule1 = lambda x: [y for y in x if y.isupper()]
+rule2 = lambda x: [y for y in x if y.islower()]
+rule3 = lambda x: [y for y in x if y.isdigit()]
 
-validate = (lambda i: [x for x in i if (x.isupper()) and (x.islower()) and (x.isdigit())])
-
-if len(validate(password)) == 0:
-    print('Valid Password')
+if len(rule1(password)) != 0 and len(rule2(password)) != 0 and len(rule3(password)) != 0 and len(password) >= 8:
+    print('valid password.')
 else:
-    print('Bad password')
-
+    print('invalid password.')
 
 ''' 7)
 Write a Python program to sort a list of tuples using Lambda.
